@@ -35,3 +35,4 @@ done;
 
 tar -czf "$backup_archive" "$backup_folder"
 
+echo "done"
