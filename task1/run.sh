@@ -44,4 +44,4 @@ for file in $(find "$input_folder" -name "*.$extension"); do
 done;
 
 tar -czf "$backup_archive" "$backup_folder"
-
+echo "done"
