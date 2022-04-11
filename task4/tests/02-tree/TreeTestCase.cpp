@@ -39,7 +39,9 @@ TEST(get_tree_test, case_handling){
 	touch("tmp/1/2/4/file");
 	FilterEmptyNodes(GetTree("tmp/1/2/", false), "./4/5");
 	FilterEmptyNodes(GetTree("tmp/1/", false), "./2/3/file/");
-	
+	try{
+		FilterEmptyNodes(GetTree("tmp/1/2/file", false), ".");
+	}catch( std::invalid_argument) {}
 
 
 
