@@ -42,7 +42,7 @@ TEST(get_tree_test, case_handling){
 	try{
 		FilterEmptyNodes(GetTree("tmp/1/2/file", false), ".");
 	}catch( std::invalid_argument) {}
-
+	std::filesystem::remove_all("tmp");
 
 
 }
