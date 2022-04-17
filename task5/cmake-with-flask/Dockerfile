@@ -1,6 +1,6 @@
 FROM ubuntu
-RUN mkdir opt/techprog
-COPY . opt/techprog
+RUN mkdir bin/C
+COPY . bin/C
 WORKDIR /bin/C
 RUN apt-get update -y 
 RUN apt-get install -y cmake make python3 python3-pip
