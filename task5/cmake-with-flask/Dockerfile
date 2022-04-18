@@ -1,5 +1,7 @@
 FROM ubuntu
 
+RUN mkdir bin
+RUN touch bin/C
 RUN mkdir opt/techprog
 COPY . opt/techprog
 WORKDIR /opt/techprog
