@@ -12,7 +12,7 @@ RUN pip3 install Flask
 RUN useradd -ms /bin/bash tp2022user
 WORKDIR /home/tp2022user
 COPY . /home/tp2022user
-RUN chown -R tp2022user:tp2022user /home/tp2022user tp2022user
+RUN chown -R tp2022user:tp2022user /home/tp2022user
 RUN  cmake .
 RUN  make
 USER tp2022user
