@@ -1,5 +1,6 @@
 FROM ubuntu
 
+
 #ARG DEBIAN_FRONTEND=noninteractive
 #ENV TZ=Europe/Moskow
 #RUN apt-get install -y  tzdata
@@ -10,8 +11,7 @@ RUN apt-get install -y python3 python3-pip
 RUN pip3 install Flask
 RUN useradd -ms /bin/bash tp2022user
 COPY . /home/tp2022user
-RUN chown -R tp2022user:tp2022user /home/tp2022user
-USER tp2022user
+RUN chown -R tp2022user:tp2022user /home/tp2022useUSER tp2022user
 WORKDIR /home/tp2022user
 RUN  cmake .
 RUN  make
