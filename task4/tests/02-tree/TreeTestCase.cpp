@@ -43,21 +43,12 @@ class TreeTest : public ::testing::Test {
 TEST_F(TreeTest, get_tree_test){
 	ASSERT_THROW(GetTree("../strange_library", false), std::invalid_argument);
 	ASSERT_THROW(GetTree("./TreeTestCase.cpp", false), std::invalid_argument);
-//	std::filesystem::create_directory("tmp");
-//	std::filesystem::create_directory("tmp/1");
-//	std::filesystem::create_directory("tmp/1/2");
 	ASSERT_EQ(GetTree("tmp/1/", false), GetTree("tmp/1/", false));
-//	touch("tmp/1/2/file");
 	ASSERT_EQ(false, GetTree("tmp/1", false) == GetTree("tmp/1/2", false));
 	ASSERT_EQ(GetTree("tmp/1/", true), GetTree("tmp/1/", true));
 	ASSERT_EQ(false, GetTree("tmp/1/2/", false) == GetTree("tmp/1/2/", true));
 }
 
-//	std::filesystem::create_directory("tmp/1/2/3");
-//	touch("tmp/1/2/3/file");
-//	std::filesystem::create_directory("tmp/1/2/4");
-//	std::filesystem::create_directory("tmp/1/2/4/6");
-//	touch("tmp/1/2/4/file");
 
 TEST_F(TreeTest, filter_empty_nodes_test){
 	FilterEmptyNodes(GetTree("tmp/1/2/", false), "./4/5");
@@ -65,7 +56,6 @@ TEST_F(TreeTest, filter_empty_nodes_test){
 	try{
 		FilterEmptyNodes(GetTree("tmp/1/2/file", false), ".");
 	}catch( std::invalid_argument) {}
-//	std::filesystem::remove_all("tmp");
 }
 
 
