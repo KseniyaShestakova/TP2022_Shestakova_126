@@ -3,7 +3,7 @@
 //
 
 #include "WeatherMock.h"
-cpr::Response WeatherMock::Get(const std::string& city, const cpr::Url& url) {
+cpr::Response WeatherMock::_Get(const std::string& city, const cpr::Url& url) {
 	cpr::Response ret;
 	std::string list = "";
 
