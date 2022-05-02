@@ -12,9 +12,6 @@ using ::testing::NiceMock;
 class WeatherMock : public Weather {
 public:
 	MOCK_METHOD(cpr::Response, Get, (const std::string& city, const cpr::Url& url), (override));
-	cpr::Response _Get(const std::string& city, const cpr::Url& url);
-//	ON_CALL(mock, Get).WillByDefault(Return(_Get(_, ));
-
 };
 
 

@@ -44,10 +44,12 @@ TEST_F(TreeTest, get_tree_test){
 	ASSERT_THROW(GetTree("../strange_library", false), std::invalid_argument);
 	ASSERT_THROW(GetTree("./TreeTestCase.cpp", false), std::invalid_argument);
 	ASSERT_EQ(GetTree("tmp/1/", false), GetTree("tmp/1/", false));
+
 	ASSERT_EQ(false, GetTree("tmp/1", false) == GetTree("tmp/1/2", false));
 	ASSERT_EQ(GetTree("tmp/1/", true), GetTree("tmp/1/", true));
 	ASSERT_EQ(false, GetTree("tmp/1/2/", false) == GetTree("tmp/1/2/", true));
 }
+
 
 
 TEST_F(TreeTest, filter_empty_nodes_test){
@@ -55,7 +57,7 @@ TEST_F(TreeTest, filter_empty_nodes_test){
 	FilterEmptyNodes(GetTree("tmp/1/", false), "./2/3/file/");
 	try{
 		FilterEmptyNodes(GetTree("tmp/1/2/file", false), ".");
-	}catch( std::invalid_argument) {}
+	}catch( std::invalid_argument){ }
 }
 
 
