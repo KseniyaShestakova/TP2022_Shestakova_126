@@ -27,6 +27,7 @@ jobs:
         with:
           name: Distributive
           path: /home/runner/work/TP2022_Shestakova_126/TP2022_Shestakova_126/task6/bin
+          path: /home/runner/work/TP2022_Shestakova_126/TP2022_Shestakova_126/task6/lib
 
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
