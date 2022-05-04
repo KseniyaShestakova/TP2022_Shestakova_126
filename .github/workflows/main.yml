@@ -26,7 +26,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: Distributive
-          path: /home/runner/work/TP2022_Shestakova_126/TP2022_Shestakova_126/task6/bin
+          path: /home/runner/work/TP2022_Shestakova_126/TP2022_Shestakova_126/task6/artefact
           
 
       - name: Test
