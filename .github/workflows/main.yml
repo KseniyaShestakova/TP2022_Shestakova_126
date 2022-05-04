@@ -32,5 +32,5 @@ jobs:
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
-          exec-path: "task6/bin/CTestExe"
+          exec-path: "task6/artefact/bin/CTestExe"
           report-path: "report.xml"
