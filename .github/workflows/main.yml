@@ -26,10 +26,10 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: Distributive
-          path: /home/runner/work/test/task-ci/bin
+          path: /home/runner/work/test/task6/bin
 
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
-          exec-path: "task-ci/bin/CTestExe"
+          exec-path: "task6/bin/CTestExe"
           report-path: "report.xml"
