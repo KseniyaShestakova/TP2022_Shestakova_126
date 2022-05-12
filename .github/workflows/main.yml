@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [ task6 ]
+  pull_request:
+    branches: [ task6 ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build
+        shell: bash
+        run: |
+          git submodule update --init --recursive
+          cd task6
+          cmake -B build
+          cd build
+          make
+
+      - name: UploadArtifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: Distributive
+          path: /home/runner/work/TP2022_Shestakova_126/TP2022_Shestakova_126/task6/artefact
+          
+
+      - name: Test
+        uses: akhtyamovpavel/ActionGtestReport@v0.0.9
+        with:
+          exec-path: "task6/artefact/bin/CTestExe"
+          report-path: "report.xml"

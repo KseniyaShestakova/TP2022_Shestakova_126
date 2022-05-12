@@ -1,0 +1,6 @@
+[submodule "task-ci/3rdparty/gtest"]
+	path = task-ci/3rdparty/gtest
+	url = https://github.com/google/googletest
+[submodule "task6/3rdparty/gtest"]
+	path = task6/3rdparty/gtest
+	url = https://github.com/google/googletest
